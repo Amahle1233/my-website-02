@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <header>
+    <!--logo goes here-->
+    <!--Navigation links-->
+    <nav>
+        <a href="./index.html">HOME</a>
+        <a href="./about.html">ABOUT US</a>
+        <a href="./contact.html">CONTACT US</a>
+        <a href="./enquiry.html">ENQUIRY</a>
+        <a href="./services.html">SERVICES</a>
+    </nav>
+    </header>   
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equity Apparel & Team Gifts | Inclusive Workplace Solutions</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;       /* Deep Navy */
+            --accent: #0d9488;        /* Teal / Equity Theme */
+            --light-bg: #f8fafc;
+            --dark-text: #0f172a;
+            --muted-text: #475569;
+            --white: #ffffff;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 8%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted-text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.6rem 1.4rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0f766e;
+        }
+
+        /* Hero Section */
+        header.hero {
+            padding: 5rem 8%;
+            text-align: center;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-light {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        /* Equity Features Section */
+        .equity-info {
+            padding: 4rem 8%;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .equity-info h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .equity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .info-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            background-color: var(--light-bg);
+        }
+
+        .info-card h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Product Section */
+        .products {
+            padding: 4rem 8%;
+        }
+
+        .products h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 200px;
+            background-color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted-text);
+            font-weight: 600;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .product-content p {
+            color: var(--muted-text);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Quote / Form Section */
+        .quote-form-section {
+            background-color: var(--white);
+            padding: 4rem 8%;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-text);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem 8%;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">Equity<span>Gear</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">Our Mission</a></li>
+            <li><a href="#products">Apparel & Gifts</a></li>
+            <li><a href="#quote">Get a Quote</a></li>
+        </ul>
+        <a href="#quote" class="btn-primary">Order Bulk</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Equip Your Team with Equal Pride</h1>
+        <p>Inclusive sizing, adaptive workplace apparel, and ethically sourced gifts designed so every team member feels valued.</p>
+        <a href="#products" class="btn-primary btn-light">Explore Products</a>
+    </header>
+
+    <!-- Value Proposition -->
+    <section class="equity-info" id="about">
+        <h2>Designed for Complete Workplace Equity</h2>
+        <p>We eliminate size penalties, exclusionary fits, and non-inclusive gifting options.</p>
+        
+        <div class="equity-grid">
+            <div class="info-card">
+                <h3>Flat-Rate Extended Sizing</h3>
+                <p>Sizes XS through 6XL are priced identically. No extra charge for larger sizes.</p>
+            </div>
+            <div class="info-card">
+                <h3>Gender-Inclusive Cuts</h3>
+                <p>Designed around diverse body structures beyond standard unisex options.</p>
+            </div>
+            <div class="info-card">
+                <h3>Ethically Sourced Gifts</h3>
+                <p>Gifting options created exclusively in partnership with Fair-Trade certified producers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2>Featured Team Gear & Gifts</h2>
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <div class="product-img">Inclusive Fit Hoodies</div>
+                <div class="product-content">
+                    <h3>Equity Fleece Hoodie</h3>
+                    <p>Ultra-soft organic cotton hoodies available in 10+ neutral colors across all sizes.</p>
+                    <a href="#quote" class="btn-primary" style="display:inline-block;">Request Sample</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">Sustainable Drinkware</div>
+                <div class="product-content">
+                    <h3>Eco-Tumbler Gift Set</h3>
+                    <p>Double-walled recycled stainless steel tumblers personalized with custom branding.</p>
+                    <a href="#quote" class="btn-primary" style="display:inline-block;">Request Sample</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">Custom Workwear</div>
+                <div class="product-content">
+                    <h3>Adaptive Corporate Polos</h3>
+                    <p>Breathable, professional apparel styled for comfort, accessibility, and durability.</p>
+                    <a href="#quote" class="btn-primary" style="display:inline-block;">Request Sample</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section class="quote-form-section" id="quote">
+        <div class="form-container">
+            <h2>Start Your Team Inquiry</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Alex Smith">
+                </div>
+                <div class="form-group">
+                    <label for="email">Work Email</label>
+                    <input type="email" id="email" name="email" required placeholder="alex@company.com">
+                </div>
+                <div class="form-group">
+                    <label for="interest">Order Type</label>
+                    <select id="interest" name="interest">
+                        <option value="apparel">Team Apparel (Polos, Hoodies)</option>
+                        <option value="gifts">Corporate Gifts & Bundles</option>
+                        <option value="both">Both Apparel & Gifts</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Team Details & Sizing Needs</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us about your team size, custom branding ideas, or timeline..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Equity Apparel & Gifts. Building inclusive workplaces through unified gear.</p>
+    </footer>
+
+</body>
+</html>   
+</body>
+</html>
