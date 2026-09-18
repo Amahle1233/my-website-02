@@ -1,0 +1,428 @@
+/* ==========================================================================
+   TEAM CLOTHING AND GIFTS - Stylesheet
+   Theme: Brown & Blue (workwear-inspired)
+   ========================================================================== */
+ 
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap');
+ 
+:root {
+    --brown-dark: #3e2723;
+    --brown-main: #6d4c41;
+    --brown-light: #a1887f;
+    --brown-cream: #efebe9;
+    --blue-dark: #0d47a1;
+    --blue-main: #1565c0;
+    --blue-light: #64b5f6;
+    --white: #ffffff;
+    --text-dark: #2b2b2b;
+    --text-muted: #5b5b5b;
+    --radius: 10px;
+    --shadow-soft: 0 4px 10px rgba(62, 39, 35, 0.15);
+    --shadow-hover: 0 10px 22px rgba(62, 39, 35, 0.25);
+}
+ 
+/* ---------- Reset & Base ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+html {
+    scroll-behavior: smooth;
+}
+ 
+body {
+    font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+    background-color: var(--brown-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+ 
+h1, h2, h3 {
+    font-family: 'Barlow Condensed', 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+ 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ 
+img {
+    display: block;
+    max-width: 100%;
+    border-radius: var(--radius);
+}
+ 
+ul {
+    list-style: none;
+}
+ 
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+ 
+/* ---------- Header & Navigation ---------- */
+header {
+    background-color: var(--brown-dark);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+ 
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+ 
+nav a {
+    color: #000000;
+    background-color: var(--brown-cream);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+ 
+nav a:hover {
+    background-color: var(--blue-light);
+    color: #000000;
+    transform: translateY(-2px);
+}
+ 
+nav .logo {
+    background: none;
+    padding: 0;
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+ 
+nav .logo span {
+    color: var(--blue-light);
+}
+ 
+nav .logo:hover {
+    background: none;
+    color: var(--blue-light);
+    transform: none;
+}
+ 
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+ 
+/* ---------- Main / Generic Sections ---------- */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+ 
+section {
+    background-color: var(--white);
+    border: 1px solid var(--brown-light);
+    border-radius: var(--radius);
+    padding: 40px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 30px;
+}
+ 
+section:last-child {
+    margin-bottom: 0;
+}
+ 
+h1 {
+    color: var(--blue-dark);
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+ 
+h2 {
+    color: var(--brown-dark);
+    font-size: 1.9rem;
+    margin-bottom: 18px;
+}
+ 
+h3 {
+    color: var(--blue-dark);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+ 
+p {
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+}
+ 
+section img {
+    margin: 0 auto;
+    border: 4px solid var(--blue-light);
+    transition: transform 0.3s ease;
+}
+ 
+section img:hover {
+    transform: scale(1.03);
+}
+ 
+/* ---------- Buttons ---------- */
+.btn,
+.btn-primary {
+    display: inline-block;
+    background-color: var(--blue-main);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+ 
+.btn:hover,
+.btn-primary:hover {
+    background-color: var(--brown-main);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+ 
+.btn-light {
+    background-color: var(--white);
+    color: var(--blue-dark);
+}
+ 
+.btn-light:hover {
+    background-color: var(--blue-light);
+    color: var(--white);
+}
+ 
+/* ---------- Hero Section ---------- */
+.hero {
+    background: linear-gradient(135deg, var(--blue-dark), var(--brown-dark));
+    color: var(--white);
+    text-align: center;
+    padding: 70px 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 30px;
+}
+ 
+.hero h1 {
+    color: var(--white);
+}
+ 
+.hero p {
+    color: var(--brown-cream);
+    max-width: 600px;
+}
+ 
+/* ---------- Story Section ---------- */
+.story {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+    flex-wrap: wrap;
+}
+ 
+.story-img {
+    flex: 1 1 300px;
+    border: 4px solid var(--blue-light);
+}
+ 
+.story-content {
+    flex: 1 1 300px;
+}
+ 
+.story-content p {
+    margin-left: 0;
+    max-width: none;
+}
+ 
+/* ---------- Values / Equity Grid ---------- */
+.values-grid,
+.equity-grid,
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+ 
+.value-card,
+.info-card,
+.product-card {
+    background-color: var(--brown-cream);
+    border: 1px solid var(--brown-light);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+ 
+.value-card:hover,
+.info-card:hover,
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--blue-main);
+}
+ 
+.value-card p,
+.info-card p,
+.product-content p {
+    margin-left: 0;
+    max-width: none;
+}
+ 
+.product-img {
+    background-color: var(--blue-dark);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    padding: 40px 10px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin: -24px -24px 16px -24px;
+}
+ 
+/* ---------- CTA Section ---------- */
+.cta h2 {
+    margin-bottom: 20px;
+}
+ 
+/* ---------- Quote / Enquiry Form ---------- */
+.quote-form-section {
+    text-align: left;
+}
+ 
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+ 
+.form-container h2 {
+    text-align: center;
+}
+ 
+.form-group {
+    margin-bottom: 18px;
+}
+ 
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--brown-dark);
+}
+ 
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--brown-light);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--white);
+    color: var(--text-dark);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+ 
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--blue-main);
+    box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.15);
+}
+ 
+/* ---------- Contact / List pages ---------- */
+main ul {
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+ 
+main ul li {
+    background-color: var(--brown-cream);
+    border: 1px solid var(--brown-light);
+    border-radius: 6px;
+    padding: 14px 18px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+main ul li:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-soft);
+}
+ 
+/* ---------- Footer ---------- */
+footer {
+    background-color: var(--brown-dark);
+    color: var(--brown-cream);
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+ 
+footer a {
+    color: var(--blue-light);
+}
+ 
+footer a:hover {
+    text-decoration: underline;
+}
+ 
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+ 
+    nav {
+        justify-content: center;
+    }
+ 
+    h1 {
+        font-size: 1.8rem;
+    }
+ 
+    section {
+        padding: 25px;
+    }
+ 
+    .story {
+        flex-direction: column;
+        text-align: center;
+    }
+ 
+    .story-content p {
+        margin: 0 auto 20px auto;
+    }
+}
