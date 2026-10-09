@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="../css/Style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Us | Team Clothing and Gifts</title>
 </head>
 <body>
 <header>
@@ -17,17 +17,125 @@
         <a href="./enquiry.html">ENQUIRY</a>
         <a href="./services.html">SERVICES</a>
     </nav>
-    </header>   
-Feel free to contact us on    
-<ul>
-   <li>Whatsapp us on: 031 003 1900</li>
-   <li> Email us on: info@teamcg.co.za</li>
-   <li> Visit us on: 2nd Floor, 1st Avenue, Durban, 4001</li>
-   <li>Follow us on: Facebook, Instagram, Twitter, linkedin, and youtube by searching for Team Clothing and Gifts</li>
-</ul>
-   
+</header>
+
+<main>
+    <h1>Contact Us</h1>
+    <p>Feel free to contact us on:</p>
+    <ul>
+        <li>Whatsapp us on: 031 003 1900</li>
+        <li>Email us on: info@teamcg.co.za</li>
+        <li>Visit us on: 2nd Floor, 1st Avenue, Durban, 4001</li>
+        <li>Follow us on: Facebook, Instagram, Twitter, LinkedIn, and YouTube by searching for Team Clothing and Gifts</li>
+    </ul>
+
+    <h2>Send us a message</h2>
+    <form id="contactForm" novalidate>
+        <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" placeholder="Your full name">
+            <span class="error" id="nameError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+            <span class="error" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="031 003 1900">
+            <span class="error" id="phoneError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="subject">Subject *</label>
+            <select id="subject" name="subject">
+                <option value="">-- Select a subject --</option>
+                <option value="General">General question</option>
+                <option value="Quote">Request a quote</option>
+                <option value="Order">Existing order</option>
+                <option value="Other">Other</option>
+            </select>
+            <span class="error" id="subjectError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" placeholder="How can we help you?"></textarea>
+            <span class="error" id="messageError"></span>
+        </div>
+
+        <button type="submit">Send Message</button>
+        <p id="successMessage" class="success" hidden></p>
+    </form>
+</main>
+
+<style>
+    /* Basic form styling - move this into your Style.css if you prefer */
+    form { max-width: 500px; margin: 1rem 0; }
+    .form-group { margin-bottom: 1rem; display: flex; flex-direction: column; }
+    label { font-weight: bold; margin-bottom: 0.3rem; }
+    input, select, textarea { padding: 0.5rem; border: 1px solid #999; border-radius: 4px; font: inherit; }
+    input.invalid, select.invalid, textarea.invalid { border-color: #c0392b; }
+    .error { color: #c0392b; font-size: 0.85rem; min-height: 1em; }
+    .success { color: #1e8449; font-weight: bold; margin-top: 1rem; }
+    button { padding: 0.6rem 1.2rem; cursor: pointer; }
+</style>
+
+<script>
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("successMessage");
+
+    // Show or clear an error under a field
+    function setError(fieldId, message) {
+        document.getElementById(fieldId + "Error").textContent = message;
+        document.getElementById(fieldId).classList.toggle("invalid", message !== "");
+        return message === "";
+    }
+
+    function validateForm() {
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const phone = form.phone.value.trim();
+        const subject = form.subject.value;
+        const message = form.message.value.trim();
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phonePattern = /^[0-9\s+()-]{9,15}$/;
+
+        let valid = true;
+
+        valid = setError("name", name.length < 2 ? "Please enter your full name." : "") && valid;
+        valid = setError("email", !emailPattern.test(email) ? "Please enter a valid email address." : "") && valid;
+        valid = setError("phone", phone && !phonePattern.test(phone) ? "Please enter a valid phone number." : "") && valid;
+        valid = setError("subject", subject === "" ? "Please select a subject." : "") && valid;
+        valid = setError("message", message.length < 10 ? "Message must be at least 10 characters." : "") && valid;
+
+        return valid;
+    }
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        successMessage.hidden = true;
+
+        if (!validateForm()) return;
+
+        // Collected form data (ready to send to a server or form service)
+        const formData = {
+            name: form.name.value.trim(),
+            email: form.email.value.trim(),
+            phone: form.phone.value.trim(),
+            subject: form.subject.value,
+            message: form.message.value.trim()
+        };
+        console.log("Form submitted:", formData);
+
+        successMessage.textContent = "Thank you, " + formData.name + "! We'll get back to you soon.";
+        successMessage.hidden = false;
+        form.reset();
+    });
+</script>
 </body>
 </html>
-
- 
-   
