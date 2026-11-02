@@ -1,141 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../css/Style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Team Clothing and Gifts</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Team Clothing and Gifts Durban</title>
+<meta name="description" content="Contact Team Clothing and Gifts: WhatsApp, email, or visit us at 1st Avenue, Durban. Send a message or find us on the map.">
+<link rel="icon" href="../Assets/logo.jpg" type="image/jpeg">
+<link rel="stylesheet" href="../css/Style.css">
+<link rel="stylesheet" href="../css/part3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header>
-    <!--logo goes here-->
-    <!--Navigation links-->
-    <nav>
-        <a href="../index.html">HOME</a>
-        <a href="./about.html">ABOUT US</a>
-        <a href="./contact.html">CONTACT US</a>
-        <a href="./enquiry.html">ENQUIRY</a>
-        <a href="./services.html">SERVICES</a>
-    </nav>
+  <a class="brand" href="../index.html"><img src="../Assets/logo.jpg" alt="Team Clothing and Gifts logo" width="50" height="50"></a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">&#9776;</button>
+  <nav id="nav" aria-label="Main">
+    <a href="../index.html">HOME</a>
+    <a href="about.html">ABOUT US</a>
+    <a href="services.html">SERVICES</a>
+    <a href="enquiry.html">ENQUIRY</a>
+    <a href="contact.html">CONTACT US</a>
+  </nav>
+  
 </header>
-
-<main>
-    <h1>Contact Us</h1>
-    <p>Feel free to contact us on:</p>
-    <ul>
-        <li>Whatsapp us on: 031 003 1900</li>
-        <li>Email us on: info@teamcg.co.za</li>
-        <li>Visit us on: 2nd Floor, 1st Avenue, Durban, 4001</li>
-        <li>Follow us on: Facebook, Instagram, Twitter, LinkedIn, and YouTube by searching for Team Clothing and Gifts</li>
-    </ul>
-
-    <h2>Send us a message</h2>
-    <form id="contactForm" novalidate>
-        <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" placeholder="Your full name">
-            <span class="error" id="nameError"></span>
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com">
-            <span class="error" id="emailError"></span>
-        </div>
-
-        <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="031 003 1900">
-            <span class="error" id="phoneError"></span>
-        </div>
-
-        <div class="form-group">
-            <label for="subject">Subject *</label>
-            <select id="subject" name="subject">
-                <option value="">-- Select a subject --</option>
-                <option value="General">General question</option>
-                <option value="Quote">Request a quote</option>
-                <option value="Order">Existing order</option>
-                <option value="Other">Other</option>
-            </select>
-            <span class="error" id="subjectError"></span>
-        </div>
-
-        <div class="form-group">
-            <label for="message">Message *</label>
-            <textarea id="message" name="message" rows="5" placeholder="How can we help you?"></textarea>
-            <span class="error" id="messageError"></span>
-        </div>
-
-        <button type="submit">Send Message</button>
-        <p id="successMessage" class="success" hidden></p>
-    </form>
+<main id="main">
+<section><h1>Contact us</h1>
+<ul><li>WhatsApp: 031 003 1900</li><li>Email: <a href="mailto:info@teamcg.co.za"><u>info@teamcg.co.za</u></a></li><li>Visit: 2nd Floor, 1st Avenue, Durban, 4001</li></ul>
+<div id="map" role="region" aria-label="Map of our Durban office"></div></section>
+<section><h2>Send us a message</h2>
+<form id="contactForm" action="mailto:info@teamcg.co.za" method="post" enctype="text/plain" novalidate>
+<div class="form-group"><label for="name">Full name *</label><input id="name" name="name" required minlength="2"><span class="error" id="nameError"></span></div>
+<div class="form-group"><label for="email">Email *</label><input id="email" name="email" type="email" required><span class="error" id="emailError"></span></div>
+<div class="form-group"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" pattern="(\+27|0)[0-9\s\-]{8,12}"><span class="error" id="phoneError"></span></div>
+<div class="form-group"><label for="subject">Message type *</label><select id="subject" name="subject" required><option value="">-- Select --</option><option>General question</option><option>Existing order</option><option>Feedback</option><option>Other</option></select><span class="error" id="subjectError"></span></div>
+<div class="form-group"><label for="message">Message *</label><textarea id="message" name="message" rows="5" minlength="10" maxlength="1000" required></textarea><span class="error" id="messageError"></span></div>
+<button class="btn" type="submit">Send message</button>
+<div id="contactResult" class="result" role="status" hidden></div>
+</form></section>
 </main>
-
-<style>
-    /* Basic form styling - move this into your Style.css if you prefer */
-    form { max-width: 500px; margin: 1rem 0; }
-    .form-group { margin-bottom: 1rem; display: flex; flex-direction: column; }
-    label { font-weight: bold; margin-bottom: 0.3rem; }
-    input, select, textarea { padding: 0.5rem; border: 1px solid #999; border-radius: 4px; font: inherit; }
-    input.invalid, select.invalid, textarea.invalid { border-color: #c0392b; }
-    .error { color: #c0392b; font-size: 0.85rem; min-height: 1em; }
-    .success { color: #1e8449; font-weight: bold; margin-top: 1rem; }
-    button { padding: 0.6rem 1.2rem; cursor: pointer; }
-</style>
-
-<script>
-    const form = document.getElementById("contactForm");
-    const successMessage = document.getElementById("successMessage");
-
-    // Show or clear an error under a field
-    function setError(fieldId, message) {
-        document.getElementById(fieldId + "Error").textContent = message;
-        document.getElementById(fieldId).classList.toggle("invalid", message !== "");
-        return message === "";
-    }
-
-    function validateForm() {
-        const name = form.name.value.trim();
-        const email = form.email.value.trim();
-        const phone = form.phone.value.trim();
-        const subject = form.subject.value;
-        const message = form.message.value.trim();
-
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const phonePattern = /^[0-9\s+()-]{9,15}$/;
-
-        let valid = true;
-
-        valid = setError("name", name.length < 2 ? "Please enter your full name." : "") && valid;
-        valid = setError("email", !emailPattern.test(email) ? "Please enter a valid email address." : "") && valid;
-        valid = setError("phone", phone && !phonePattern.test(phone) ? "Please enter a valid phone number." : "") && valid;
-        valid = setError("subject", subject === "" ? "Please select a subject." : "") && valid;
-        valid = setError("message", message.length < 10 ? "Message must be at least 10 characters." : "") && valid;
-
-        return valid;
-    }
-
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        successMessage.hidden = true;
-
-        if (!validateForm()) return;
-
-        // Collected form data (ready to send to a server or form service)
-        const formData = {
-            name: form.name.value.trim(),
-            email: form.email.value.trim(),
-            phone: form.phone.value.trim(),
-            subject: form.subject.value,
-            message: form.message.value.trim()
-        };
-        console.log("Form submitted:", formData);
-
-        successMessage.textContent = "Thank you, " + formData.name + "! We'll get back to you soon.";
-        successMessage.hidden = false;
-        form.reset();
-    });
-</script>
+<footer>
+  <div class="social">
+    <a href="https://www.facebook.com/" rel="noopener" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/" rel="noopener" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/" rel="noopener" target="_blank">TikTok</a>
+    <a href="https://wa.me/270310031900" rel="noopener" target="_blank">WhatsApp</a>
+  </div>
+  <p>&copy; <span id="year">2026</span> Team Clothing and Gifts, Durban. Uniforms and promotional goods since 2001.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="../js/main.js" defer></script>
 </body>
 </html>
+ 
