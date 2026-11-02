@@ -52,3 +52,5 @@ Open `index.html` in a browser (no build step).
 
 ## Deployment
 Live URL: _add your Netlify / GitHub Pages link here and submit on ARC_
+
+![alt text](<Screenshot 2026-11-02 234228.png>)
